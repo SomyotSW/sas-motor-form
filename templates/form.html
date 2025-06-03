@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAS Motor Registration</title>
+</head>
+<body>
+    <h2>ลงทะเบียนมอเตอร์เกียร์</h2>
+    <form action="/submit" method="post" enctype="multipart/form-data">
+        <label>ชื่อผู้ขอ:</label>
+        <input type="text" name="requested_by" required><br><br>
+
+        <label>รุ่นมอเตอร์:</label>
+        <input type="text" name="motor_model" required><br><br>
+
+        <label>กำลังมอเตอร์ (Power):</label>
+        <input type="number" name="motor_power" step="any" required>
+        <select name="power_unit" required>
+            <option value="W">W</option>
+            <option value="kW">kW</option>
+            <option value="HP">HP</option>
+        </select><br><br>
+
+        <label>รุ่นเกียร์:</label>
+        <input type="text" name="gear_model" required><br><br>
+
+        <label>อัตราทด (Gear Ratio):</label>
+        <input type="text" name="gear_ratio" required><br><br>
+
+        <label>แรงดันไฟ:</label>
+        <select name="voltage" required>
+            <option value="220V">220V</option>
+            <option value="380V">380V</option>
+            <option value="อื่นๆ">อื่นๆ</option>
+        </select><br><br>
+
+        <label>อุปกรณ์เสริมที่ต้องการ:</label><br>
+        <input type="checkbox" name="accessory" value="Speed Controller"> Speed Controller<br>
+        <input type="checkbox" name="accessory" value="Inverter"> Inverter<br><br>
+
+        <label>ประเภทความต้องการของลูกค้า:</label>
+        <select name="customer_requirement" required>
+            <option value="New or Spare Units">New or Spare Units</option>
+            <option value="Replacement">Replacement</option>
+        </select><br><br>
+
+        <label>รูป Nameplate Motor:</label>
+        <input type="file" name="motor_image" accept="image/*" required><br><br>
+
+        <label>รูป Nameplate Gear:</label>
+        <input type="file" name="gear_image" accept="image/*" required><br><br>
+
+        <label>รูปการติดตั้ง:</label>
+        <input type="file" name="installation_image" accept="image/*" required><br><br>
+
+        <button type="submit">ส่งข้อมูล</button>
+    </form>
+</body>
+</html>

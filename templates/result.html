@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ผลการลงทะเบียน</title>
+</head>
+<body>
+    <h2>ข้อมูลที่คุณส่งมา</h2>
+    <p><strong>รุ่นมอเตอร์:</strong> {{ motor_model }}</p>
+    <p><strong>รุ่นเกียร์:</strong> {{ gear_model }}</p>
+    <p><strong>แรงดันไฟ:</strong> {{ voltage }}</p>
+
+    <h3>รูป Nameplate Motor</h3>
+    <img src="{{ url_for('static', filename=motor_image.split('static/')[-1]) }}" width="300">
+
+    <h3>รูป Nameplate Gear</h3>
+    <img src="{{ url_for('static', filename=gear_image.split('static/')[-1]) }}" width="300">
+
+    <h3>รูปการติดตั้ง</h3>
+    <img src="{{ url_for('static', filename=installation_image.split('static/')[-1]) }}" width="300">
+
+    <h3>PDF Report</h3>
+    <a href="{{ url_for('static', filename='uploads/' + pdf_file) }}" download>
+        📄 ดาวน์โหลดรายงาน PDF
+    </a>
+</body>
+</html>
